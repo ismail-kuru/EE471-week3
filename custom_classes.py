@@ -44,3 +44,16 @@ class DVD(MediaItem):
         if result == "Successful checkout":
             print("Handle with care: Do not scratch the disc.")
         return result
+
+
+class LibraryCollection:
+    """A container that holds the library's media items."""
+
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, item):
+        self.items.append(item)
+
+    def list_available(self):
+        return [item.title for item in self.items if item.is_available]
