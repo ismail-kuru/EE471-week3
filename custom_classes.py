@@ -8,6 +8,7 @@ class MediaItem:
     """
 
     def __init__(self, title, author, is_available=True):
+        """Create an item with a title, an author and an availability status."""
         self.title = title
         self.author = author
         self.is_available = is_available
@@ -41,6 +42,7 @@ class Book(MediaItem):
     """
 
     def __init__(self, title, author, page_count, is_available=True):
+        """Create a book with a title, an author and a page count."""
         super().__init__(title, author, is_available)
         self.page_count = page_count
 
@@ -58,6 +60,7 @@ class DVD(MediaItem):
     """
 
     def __init__(self, title, author, duration, is_available=True):
+        """Create a DVD with a title, an author and a duration in minutes."""
         super().__init__(title, author, is_available)
         self.duration = duration
 
@@ -83,6 +86,7 @@ class LibraryCollection:
     """
 
     def __init__(self):
+        """Create an empty collection."""
         self.items = []
 
     def add_item(self, item):
