@@ -2,6 +2,7 @@ from custom_classes import DVD, Book, LibraryCollection, MediaItem
 
 
 def main():
+    """Fill a library with mixed items, check two out and list what is left."""
     library = LibraryCollection()
 
     book = Book("1984", "George Orwell", 328)
