@@ -59,13 +59,13 @@ class DVD(MediaItem):
     """A DVD, which is fragile and needs a care reminder on checkout.
 
     Attributes:
-        duration: The running time of the DVD in minutes.
+        duration_minutes: The running time of the DVD in minutes.
     """
 
-    def __init__(self, title, author, duration, is_available=True):
+    def __init__(self, title, author, duration_minutes, is_available=True):
         """Create a DVD with a title, an author and a duration in minutes."""
         super().__init__(title, author, is_available)
-        self.duration = duration
+        self.duration_minutes = duration_minutes
 
     def checkout(self):
         """Check the DVD out and print a care reminder if it succeeded.
