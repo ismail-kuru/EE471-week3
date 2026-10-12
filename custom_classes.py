@@ -28,10 +28,14 @@ class MediaItem:
         """Mark the item as available again."""
         self.is_available = True
 
+    @property
+    def status(self):
+        """Return "Available" or "Checked Out" based on is_available."""
+        return "Available" if self.is_available else "Checked Out"
+
     def __str__(self):
         """Return the item as "Title by Author [Available/Checked Out]"."""
-        status = "Available" if self.is_available else "Checked Out"
-        return f"{self.title} by {self.author} [{status}]"
+        return f"{self.title} by {self.author} [{self.status}]"
 
 
 class Book(MediaItem):
@@ -48,8 +52,7 @@ class Book(MediaItem):
 
     def __str__(self):
         """Return the book as "Title by Author, N pages [Available/Checked Out]"."""
-        status = "Available" if self.is_available else "Checked Out"
-        return f"{self.title} by {self.author}, {self.page_count} pages [{status}]"
+        return f"{self.title} by {self.author}, {self.page_count} pages [{self.status}]"
 
 
 class DVD(MediaItem):
