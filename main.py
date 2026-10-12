@@ -1,24 +1,24 @@
-from custom_classes import MediaItem
+from custom_classes import DVD, Book
 
 
 def main():
-    book = MediaItem("1984", "George Orwell")
-    movie = MediaItem("Inception", "Christopher Nolan")
+    book = Book("1984", "George Orwell", 328)
+    dvd = DVD("Inception", "Christopher Nolan", 148)
 
     print("--- Library ---")
     print(book)
-    print(movie)
+    print(dvd)
 
-    print("\n--- Checking out the book ---")
-    print(book.checkout())
-    print(book)
+    print("\n--- Checking out the DVD ---")
+    print(dvd.checkout())
+    print(dvd)
 
-    print("\n--- Trying to check out the book again ---")
-    print(book.checkout())
+    print("\n--- Trying to check out the DVD again ---")
+    print(dvd.checkout())
 
     print("\n--- Library ---")
     print(book)
-    print(movie)
+    print(dvd)
 
 
 if __name__ == "__main__":
